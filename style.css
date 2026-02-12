@@ -25,8 +25,8 @@ body {
 /* LAYOUT */
 main {
   position: relative;
-  width: 100rem;
-  height: 60rem;
+  width: min(100rem, 95vw);
+  height: min(60rem, 90vh);
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
@@ -169,4 +169,73 @@ main {
 
 .hidden {
   display: none;
+}
+
+/* RESPONSIVE ------------------------------------- */
+@media (max-width: 784px) {
+  .name {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+    padding: 0.3rem 2.1rem;
+  }
+
+  .current {
+    width: 90%;
+    max-width: 28rem;
+  }
+}
+
+@media (max-width: 611px) {
+  main {
+    flex-direction: column;
+    height: auto;
+    padding: 1.2rem 0;
+  }
+
+  .player {
+    flex: none;
+    width: 100%;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .current {
+    width: 92%;
+  }
+
+  .btn {
+    position: fixed;
+    left: 1.2rem;
+    transform: none;
+    z-index: 20;
+    font-size: 1.2rem;
+    padding: 0.2rem 1.3rem;
+  }
+
+  /* stack buttons around center */
+  .btn--new  {
+    top: 10%;
+    left: 3%;
+  }
+  .btn--roll {
+    top: 46.55%;
+    left: 3%;
+  }
+  .btn--hold {
+    top: 55%;
+    left: 3%;
+  }
+
+  /* dice on right, vertically centered */
+  .dice {
+    position: fixed;
+    right: 3%;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 8rem;
+    z-index: 20;
+  }
 }
